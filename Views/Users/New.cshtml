@@ -1,0 +1,45 @@
+@model User
+
+<div class="container">
+    <h3>Dojo Survey</h3>
+    <form asp-controller="Users" asp-action="Create">
+        <div class="form-group">
+            <label asp-for="FullName">FullName</label>
+            <span class="text-danger font-weight-bold" asp-validation-for="FullName"></span>
+            <input class="form-control" placeholder="Full Name" asp-for="FullName">
+        </div>
+                <div class="form-group">
+            <label asp-for="Email">Email</label>
+            <span class="text-danger font-weight-bold" asp-validation-for="Email"></span>
+            <input class="form-control" placeholder="you@example.com" asp-for="Email">
+        </div>
+        <div class="form-group">
+            <label asp-for="DojoLocation">DojoLocation</label>
+            <span class="text-danger font-weight-bold" asp-validation-for="DojoLocation"></span>
+            <select class="form-control" asp-for="DojoLocation">
+                <option>San Jose</option>
+                <option>Burbank</option>
+                <option>Orange County</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label asp-for="Language">Language</label>
+            <span class="text-danger font-weight-bold" asp-validation-for="Language"></span>
+            <select class="form-control" asp-for="Language">
+                <option>C#</option>
+                <option>Javascript</option>
+                <option>Python</option>
+                <option>Java</option>
+                <option>Apex</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label asp-for="Comments">Comments:</label>
+            <span class="text-danger font-weight-bold" asp-validation-for="Comments"></span>
+            <textarea class="form-control" asp-for="Comments" rows="3"></textarea>
+            <small class="text-muted">Include any special requests you have for us!</small>
+        </div>
+        <hr>
+        <button type="submit" class="btn btn-info btn-lg btn-block my-3">Submit</button>
+    </form>
+</div>
